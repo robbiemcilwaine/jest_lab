@@ -81,7 +81,7 @@ describe('subtract', () => {
   test('can subtract two negative floats', () => {
     expected = -1.1;
     actual = subtract(-2.3, -1.2);
-    expect(actual).toBe(expected); 
+    expect(actual).toBeCloseTo(expected)
   });
 });
 
@@ -147,6 +147,18 @@ describe('divide', () => {
     actual = divide(8, 0);
     expect(actual).toBe(expected);
   });
+
+  test('can divide two negative floats', () => {
+    expected = 3;
+    actual = divide(-3.6, -1.2);
+    expect(actual).toBe(expected);
+  });
+
+  test('can divide two positive floats', () => {
+    expected = 3;
+    actual = divide(3.6, 1.2);
+    expect(actual).toBe(expected);
+  });
 });
 
 describe('modulus', () => {
@@ -169,9 +181,20 @@ describe('modulus', () => {
   });
 
   test('can modulo zero', () => {
-    expected = NaN;
     actual = modulus(8, 0);
-    expect(actual).toBe(expected);
+    expect(actual).toBeNaN();
+  });
+
+  test('can modulo two positive floats', () => { 
+    expected = 0.8;
+    actual = modulus(3.2, 2.4);
+    expect(actual).toBeCloseTo(expected);
+  });
+
+  test('can modulo two negative floats', () => {
+    expected = -1.3;
+    actual = modulus(-8.5, -2.4);
+    expect(actual).toBeCloseTo(expected);
   });
 });
 
