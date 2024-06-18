@@ -149,7 +149,7 @@ describe('even', () => {
 
   test('can check if even for odd number', () => { 
     expected = false;
-    actual = even();
+    actual = even(7);
     expect(actual).toBe(expected);
   });
 
@@ -173,5 +173,33 @@ describe('even', () => {
 });
 
 describe('odd', () => {
+  test('can check if odd for even number', () => {
+    expected = false;
+    actual = odd(8);
+    expect(actual).toBe(expected);
+  });
 
+  test('can check if odd for odd number', () => { 
+    expected = true;
+    actual = odd(7);
+    expect(actual).toBe(expected);
+  });
+
+  test('can check if odd for negative even', () => {
+    expected = false;
+    actual = odd(-6);
+    expect(actual).toBe(expected);
+  });
+
+  test('can check if odd for negative odd', () => {
+    expected = true;
+    actual = odd(-7);
+    expect(actual).toBe(expected);
+  });
+
+  test('can check if odd for zero', () => {
+    expected = false;
+    actual = odd(8, 0);
+    expect(actual).toBe(expected);
+  });
 });

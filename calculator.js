@@ -19,10 +19,12 @@ const modulus = (a, b) => {
 };
 
 const even = (a) => {
-    return a % 2 == 0;
+    return modulus(a, 2) == 0;
 };
 
-const odd = null;
+const odd = (a) => {
+    return even(a) != 0;
+};
 
 module.exports = { 
     sum, 
