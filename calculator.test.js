@@ -34,6 +34,17 @@ describe('sum', () => {
     expect(actual).toBe(expected);
   });
 
+  test('can add two floats', () => {
+    expected = 3.8;
+    actual = sum(1.9, 1.9);
+    expect(actual).toBe(expected); 
+  });
+
+  test('can add two negative floats', () => {
+    expected = -3.8;
+    actual = sum(-1.9, -1.9);
+    expect(actual).toBe(expected); 
+  });
 });
 
 describe('subtract', () => {
@@ -60,6 +71,18 @@ describe('subtract', () => {
     actual = subtract(8, 0);
     expect(actual).toBe(expected);
   });
+
+  test('can subtract two floats', () => {
+    expected = 2.2;
+    actual = subtract(3.4, 1.2);
+    expect(actual).toBe(expected); 
+  });
+
+  test('can subtract two negative floats', () => {
+    expected = -1.1;
+    actual = subtract(-2.3, -1.2);
+    expect(actual).toBe(expected); 
+  });
 });
 
 describe('multiply', () => {
@@ -84,6 +107,18 @@ describe('multiply', () => {
   test('can multiply zero', () => {
     expected = 0;
     actual = multiply(8, 0);
+    expect(actual).toBe(expected);
+  });
+
+  test('can multiply two positive floats', () => {
+    expected = (8.87 * 7.36);
+    actual = multiply(8.87, 7.36);
+    expect(actual).toBe(expected);
+  });
+
+  test('can multiply two negative floats', () => {
+    expected = (-6.32 * -3.97);
+    actual = multiply(-6.32, -3.97);
     expect(actual).toBe(expected);
   });
 });
