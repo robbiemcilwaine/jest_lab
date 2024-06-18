@@ -141,7 +141,35 @@ describe('modulus', () => {
 });
 
 describe('even', () => {
+  test('can check if even for even number', () => {
+    expected = true;
+    actual = even(8);
+    expect(actual).toBe(expected);
+  });
 
+  test('can check if even for odd number', () => { 
+    expected = false;
+    actual = even();
+    expect(actual).toBe(expected);
+  });
+
+  test('can check if even for negative even', () => {
+    expected = true;
+    actual = even(-6);
+    expect(actual).toBe(expected);
+  });
+
+  test('can check if even for negative odd', () => {
+    expected = false;
+    actual = even(-7);
+    expect(actual).toBe(expected);
+  });
+
+  test('can check if even for zero', () => {
+    expected = true;
+    actual = even(8, 0);
+    expect(actual).toBe(expected);
+  });
 });
 
 describe('odd', () => {
