@@ -115,7 +115,29 @@ describe('divide', () => {
 });
 
 describe('modulus', () => {
+  test('can modulo two small positive numbers', () => {
+    expected = 1;
+    actual = modulus(3, 2);
+    expect(actual).toBe(expected);
+  });
 
+  test('can modulo two large positive numbers', () => { 
+    expected = 1;
+    actual = modulus(401, 20);
+    expect(actual).toBe(expected);
+  });
+
+  test('can modulo two negative numbers', () => {
+    expected = -1;
+    actual = modulus(-7, -2);
+    expect(actual).toBe(expected);
+  });
+
+  test('can modulo zero', () => {
+    expected = NaN;
+    actual = modulus(8, 0);
+    expect(actual).toBe(expected);
+  });
 });
 
 describe('even', () => {
